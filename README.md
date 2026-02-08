@@ -1,134 +1,228 @@
-# Arman Faisal
+# 🧪 AI LAB // ARMAN FAISAL
+### `SYSTEM ROLE: AI/ML ENGINEER + FULLSTACK ARCHITECT`
 
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=SF+Pro+Display&size=24&duration=3500&pause=1200&color=000000&center=true&vCenter=true&width=600&lines=AI%2FML+Engineer;Fullstack+Developer;Computer+Vision+%7C+NLP+%7C+Generative+AI;Building+Production+AI+Systems" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Share+Tech+Mono&size=26&duration=2500&pause=800&color=00FFB3&center=true&vCenter=true&width=800&lines=INITIALIZING+AI+LAB...;Loading+Computer+Vision+Modules...;Loading+NLP+Pipelines...;Deploying+Cloud+Inference+Systems...;SYSTEM+READY" />
 
 </div>
 
 ---
 
-## About
+## 🧬 LAB IDENTITY
 
-AI/ML Engineer and Full-Stack Developer focused on building **production-grade intelligent systems**.
-
-I specialize in:
-- Computer Vision Systems
-- Generative AI Pipelines
-- NLP (Low Resource Languages — Urdu)
-- Cloud-Native ML APIs
-- Scalable Backend Architecture
-
-Currently building end-to-end AI systems from **model research → deployment → web products**.
+```bash
+USER: arman_faisal
+CLASS: AI_SYSTEMS_ENGINEER
+SPECIALIZATION: CV | GENAI | NLP | CLOUD ML
+STATUS: ACTIVE
+LOCATION: Karachi, Pakistan
+```
 
 ---
 
-## Tech Stack
+## 🧠 ACTIVE RESEARCH MODULES
 
-### AI / Machine Learning
-Python • PyTorch • TensorFlow • Scikit-learn • ONNX  
-OpenCV • YOLOv8 • SAM-2 • GroundingDINO  
-
-### Generative AI
-Stable Diffusion • ControlNet • Inpainting Pipelines  
-Embedding Systems • Deep Metric Learning  
-
-### Backend
-FastAPI • Django • Flask • REST APIs  
-
-### Frontend
-React • Tailwind CSS • JavaScript • HTML • CSS  
-
-### Cloud / DevOps
-AWS (Lambda, S3, ECR) • Docker • CI/CD • GitHub Actions • Linux  
-
-### Databases
-PostgreSQL • MySQL • SQL Server • Supabase  
+| Module | Status | Stack |
+|---|---|---|
+| Computer Vision | 🟢 Running | OpenCV, YOLOv8, SAM-2 |
+| Generative AI | 🟢 Running | Stable Diffusion, ControlNet |
+| NLP (Urdu) | 🟢 Running | Custom BPE, Unicode Processing |
+| ML Infrastructure | 🟢 Running | FastAPI, Docker, AWS |
+| Fullstack Systems | 🟢 Running | React, Tailwind, REST APIs |
 
 ---
 
-## Selected Work
+## ⚙️ AI PIPELINE ARCHITECTURE
 
-### ReScene — AI Object Removal & Inpainting
-End-to-end system combining segmentation, detection, and generative inpainting.
-
-Stack:
-PyTorch • SAM-2 • GroundingDINO • ProPainter • Stable Diffusion • FastAPI • React
-
----
-
-### Urdu Two-Stage BPE Tokenizer
-Research-driven tokenizer improving Urdu LLM efficiency through script-aware tokenization.
-
----
-
-### Animal Re-Identification System
-Few-shot learning pipeline using metric learning + embedding retrieval.
-
----
-
-### Serverless MNIST AI Inference
-Cloud-native ML inference deployed on AWS Lambda with ONNX optimization.
+```
+[ DATA ] 
+   ↓
+[ PREPROCESSING ]
+   ↓
+[ MODEL TRAINING ]
+   ↓
+[ MODEL OPTIMIZATION (ONNX / Quantization) ]
+   ↓
+[ FASTAPI INFERENCE API ]
+   ↓
+[ DOCKER CONTAINER ]
+   ↓
+[ AWS LAMBDA / CLOUD DEPLOYMENT ]
+   ↓
+[ REACT FRONTEND ]
+```
 
 ---
 
-## Engineering Principles
+## 🤖 CORE AI STACK
 
-- Build for scale
-- Optimize for latency
-- Design clean APIs
-- Ship production-ready code
-- Document everything
+### 🧪 Deep Learning
+```
+PyTorch
+TensorFlow
+Scikit-Learn
+ONNX Runtime
+NumPy / Pandas
+```
+
+### 👁 Computer Vision Lab
+```
+OpenCV
+YOLOv8
+SAM-2 Segmentation
+GroundingDINO Detection
+ProPainter Video Inpainting
+LaMa Structural Fill
+```
+
+### 🧬 Generative AI
+```
+Stable Diffusion 1.5
+ControlNet
+Deep Metric Learning
+Embedding Systems
+```
 
 ---
 
-## GitHub Stats
+## 🌐 FULLSTACK ENGINEERING ZONE
+
+### Frontend Console
+```
+React
+TailwindCSS
+JavaScript
+Bootstrap
+```
+
+### Backend Systems
+```
+FastAPI
+Django
+Flask
+REST API Design
+```
+
+---
+
+## ☁️ CLOUD DEPLOYMENT TERMINAL
+
+```
+AWS Lambda
+AWS S3
+AWS ECR
+Docker Containers
+GitHub Actions CI/CD
+Linux Systems
+```
+
+---
+
+## 🧪 FEATURED LAB PROJECTS
+
+### 🧩 ReScene — AI Object Removal System
+```
+✔ Click-based Segmentation (SAM-2)
+✔ Text Guided Detection (GroundingDINO)
+✔ Video Inpainting (ProPainter)
+✔ Image Inpainting (Stable Diffusion + LaMa)
+✔ FastAPI + React Deployment
+```
+
+---
+
+### 🧠 Urdu BPE Tokenization Research
+```
+✔ Script Aware Tokenization
+✔ Unicode Normalization (NFKC)
+✔ Regex Pre-tokenization
+✔ Reduced Token Fertility
+✔ Improved LLM Efficiency for Urdu
+```
+
+---
+
+### 🐾 Animal Re-Identification AI
+```
+✔ Siamese Networks
+✔ ArcFace Embeddings
+✔ Prototypical Networks
+✔ FAISS Vector Search
+```
+
+---
+
+### ☁️ Serverless AI Inference
+```
+✔ AWS Lambda ML Deployment
+✔ Docker Container Runtime
+✔ ONNX Optimization
+✔ Cold Start Latency Reduction
+```
+
+---
+
+## 📊 LIVE SYSTEM METRICS
+
+```
+AI Engineering        ███████████████████ 95%
+Computer Vision       ██████████████████░ 92%
+Generative AI         █████████████████░░ 90%
+Backend Systems       ████████████████░░░ 85%
+Cloud Deployment      ███████████████░░░░ 82%
+Frontend              █████████████░░░░░░ 75%
+```
+
+---
+
+## 📡 GITHUB TELEMETRY
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=Arman-dev123&show_icons=true&hide_border=true" />
-
-<img height="165" src="https://github-readme-streak-stats.herokuapp.com/?user=Arman-dev123&hide_border=true" />
+<img height="165em" src="https://github-readme-stats.vercel.app/api?username=Arman-dev123&show_icons=true&theme=chartreuse-dark&hide_border=true"/>
+<img height="165em" src="https://github-readme-streak-stats.herokuapp.com/?user=Arman-dev123&theme=chartreuse-dark&hide_border=true"/>
 
 </div>
 
 ---
 
-## Current Focus
+## 🧬 CURRENT EXPERIMENTS
 
-- Multimodal AI Systems  
-- Video Understanding  
-- Urdu NLP Research  
-- Generative Video Editing  
-- Real-Time AI APIs  
-
----
-
-## Contact
-
-Email: armanfaisal0007@gmail.com  
-GitHub: https://github.com/Arman-dev123  
-LinkedIn: https://linkedin.com/in/arman-faisal  
+- Multimodal Vision + Language Models  
+- Real-time Video Editing AI  
+- Urdu LLM Optimization  
+- Edge Deployable CV Models  
+- AI SaaS Architectures  
 
 ---
 
-## Philosophy
+## 🛰 COMMUNICATION CHANNELS
 
-> Simplicity is the ultimate sophistication.  
-> Build intelligent systems that matter.
+```
+GitHub     → @Arman-dev123
+LinkedIn   → arman-faisal
+Email      → armanfaisal0007@gmail.com
+```
 
 ---
 
-## Runtime
+## 🧠 LAB OPERATING PRINCIPLE
 
 ```python
-class Engineer:
-    def __init__(self):
-        self.state = "learning"
+def life_cycle():
+    while True:
+        learn()
+        build()
+        deploy()
+        optimize()
+```
 
-    def run(self):
-        while True:
-            self.learn()
-            self.build()
-            self.deploy()
-            self.improve()
+---
+
+## ⚠️ LAB NOTICE
+
+> AI is not magic.  
+> It is engineering, math, experimentation, and iteration — at scale.
+
+---
