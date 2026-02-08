@@ -1,163 +1,161 @@
-# 🤖 J.A.R.V.I.S // AI SYSTEM DASHBOARD
-### Artificial Intelligence Engineering Console — Arman Faisal
+# 🌌 NEON AI CITY // ARMAN FAISAL
+### Cyberpunk Artificial Intelligence Engineer
 
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=26&duration=2500&pause=800&color=00E6FF&center=true&vCenter=true&width=900&lines=JARVIS+BOOTING...;Loading+AI+Modules...;Computer+Vision+Systems+Online;NLP+Systems+Online;Cloud+Inference+Systems+Online;Welcome+Arman" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=28&duration=3000&pause=800&color=FF00FF&center=true&vCenter=true&width=900&lines=Welcome+to+Neon+AI+City;AI+Systems+Running;Vision+Modules+Online;Cloud+Nodes+Connected;Neural+Networks+Active" />
 
 </div>
 
 ---
 
-## 🧠 SYSTEM PROFILE
+## 🌆 CITY IDENTITY
 
-```json
-{
-  "name": "Arman Faisal",
-  "role": "AI/ML Engineer + Fullstack Developer",
-  "specialization": [
-    "Computer Vision",
-    "Generative AI",
-    "NLP",
-    "Cloud ML Systems"
-  ],
-  "status": "ACTIVE",
-  "build_mode": "PRODUCTION"
-}
+```yaml
+Citizen: Arman Faisal
+District: AI Engineering
+Class: Neural Systems Architect
+City Role:
+  - AI/ML Engineer
+  - Fullstack Developer
+  - Computer Vision Specialist
+  - Generative AI Builder
 ```
 
 ---
 
-## ⚡ CORE AI CAPABILITIES
+## ⚡ NEURAL TECH STACK
 
-### 🤖 Artificial Intelligence
-- PyTorch  
-- TensorFlow  
-- Scikit-learn  
-- ONNX Runtime  
+### 🧠 AI Core
+```
+PyTorch
+TensorFlow
+Scikit-learn
+ONNX Runtime
+NumPy
+Pandas
+```
 
-### 👁 Computer Vision
-- OpenCV  
-- YOLOv8  
-- SAM-2  
-- GroundingDINO  
-- ProPainter  
-- LaMa  
+### 👁 Vision District
+```
+OpenCV
+YOLOv8
+SAM-2
+GroundingDINO
+Video Inpainting AI
+Image Inpainting AI
+```
 
-### 🧬 Generative AI
-- Stable Diffusion  
-- ControlNet  
-- Deep Metric Learning  
-- Embedding Retrieval Systems  
+### 🧬 Generative District
+```
+Stable Diffusion
+ControlNet
+Embedding Systems
+Metric Learning
+```
 
 ---
 
-## 🌐 SOFTWARE ENGINEERING SYSTEMS
+## 🌐 WEB SYSTEMS SECTOR
 
-### Frontend Interface Layer
+### Neon UI Layer
 ```
 React
-Tailwind CSS
+TailwindCSS
 JavaScript
 Bootstrap
 ```
 
-### Backend Intelligence Layer
+### API Intelligence Layer
 ```
 FastAPI
 Django
 Flask
-REST API Architecture
+REST APIs
 ```
 
 ---
 
-## ☁️ CLOUD INFRASTRUCTURE
+## ☁️ CLOUD SKY NETWORK
 
 ```
 AWS Lambda
-AWS S3
-AWS ECR
 Docker Containers
+S3 Storage
 CI/CD Pipelines
-Linux Systems
+Linux Servers
 ```
 
 ---
 
-## 🧪 ACTIVE PROJECT SYSTEMS
+## 🧪 CITY PROJECT NETWORK
 
-### 🧩 ReScene AI Object Removal
-- Click Segmentation → SAM-2  
-- Text Detection → GroundingDINO  
-- Video Inpainting → ProPainter  
-- Image Inpainting → Stable Diffusion + LaMa  
+### 🧩 ReScene AI
+AI Object Removal + Video Inpainting Platform
 
----
+### 🧠 Urdu AI Language Research
+Low-resource language optimization
 
-### 🧠 Urdu NLP Tokenizer Research
-- Script Aware BPE  
-- Unicode Normalization  
-- Token Efficiency Optimization  
+### 🐾 Wildlife AI Recognition
+Few-shot learning identification system
 
----
-
-### 🐾 AI Re-Identification System
-- Siamese Networks  
-- ArcFace Embeddings  
-- FAISS Retrieval  
+### ☁️ Serverless AI Deployment
+ONNX optimized inference APIs
 
 ---
 
-## 📊 SYSTEM PERFORMANCE METRICS
+## 📊 POWER GRID LEVELS
 
 ```
 AI Engineering        ███████████████████ 95%
 Computer Vision       ██████████████████░ 92%
 Generative AI         █████████████████░░ 90%
-Backend Engineering   ████████████████░░░ 85%
-Cloud Systems         ███████████████░░░░ 82%
-Frontend              █████████████░░░░░░ 75%
+Backend Systems       ████████████████░░░ 85%
+Cloud Infrastructure  ███████████████░░░░ 82%
+Frontend Systems      █████████████░░░░░░ 75%
 ```
 
 ---
 
-## 📡 GITHUB SYSTEM TELEMETRY
+## 📡 CITY NETWORK STATUS
 
 <div align="center">
 
-<img height="165em" src="https://github-readme-stats.vercel.app/api?username=Arman-dev123&show_icons=true&theme=tokyonight&hide_border=true"/>
-<img height="165em" src="https://github-readme-streak-stats.herokuapp.com/?user=Arman-dev123&theme=tokyonight&hide_border=true"/>
+<img height="165em" src="https://github-readme-stats.vercel.app/api?username=Arman-dev123&show_icons=true&theme=radical&hide_border=true"/>
+<img height="165em" src="https://github-readme-streak-stats.herokuapp.com/?user=Arman-dev123&theme=radical&hide_border=true"/>
 
 </div>
 
 ---
 
-## 🧬 CURRENT EXECUTION TASKS
+## 🧬 ACTIVE CITY EXPERIMENTS
 
-- Multimodal AI Systems  
-- Video Editing AI  
-- Urdu LLM Optimization  
+- Multimodal Neural Systems  
+- Real-time Video AI  
+- Edge AI Deployment  
+- Urdu Language Models  
 - AI SaaS Platforms  
-- Real-time Inference APIs  
 
 ---
 
-## 🧠 CORE OPERATING LOOP
+## 🌌 CITY PHILOSOPHY
+
+> In Neon City —  
+> Code is survival.  
+> AI is power.  
+> Intelligence is infrastructure.
+
+---
+
+## 🤖 NEURAL LOOP
 
 ```python
-while True:
-    learn()
-    build()
-    deploy()
-    optimize()
+def neon_city():
+    while alive:
+        build_ai()
+        deploy_models()
+        scale_systems()
+        evolve()
 ```
-
----
-
-## ⚠️ JARVIS MESSAGE
-
-> “The best AI is not the most complex —  
-> It is the one that works reliably at scale.”
 
 ---
