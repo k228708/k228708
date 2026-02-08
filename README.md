@@ -1,134 +1,240 @@
-<!-- 
-  GitHub Profile README for Arman Faisal
-  Futuristic AI/ML + Full-Stack Theme – February 2026
--->
-
 <div align="center">
 
-  <!-- Animated header with futuristic vibe -->
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=32&duration=4000&pause=1000&color=00F0FF&center=true&vCenter=true&width=600&lines=ARMAN+FAISAL;AI%2FML+ENGINEER+%7C+FULL-STACK+DEVELOPER;BUILDING+THE+NEXT+INTELLIGENT+REALITY" alt="Typing SVG" />
-
-  <br/><br/>
-
-  <!-- Futuristic neural network background -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://images.stockcake.com/public/d/e/d/ded804bb-0a3a-4e26-99a1-f3531bbc2fb0/neon-robot-dreams-stockcake.jpg">
-    <img src="https://thumbs.dreamstime.com/b/futuristic-data-network-connections-abstract-blue-technology-background-depicts-glowing-lines-light-particles-symbolizing-388585573.jpg" width="800" alt="Futuristic AI Network" style="border-radius:12px; box-shadow: 0 0 40px rgba(0,240,255,0.4);"/>
-  </picture>
-
-  <br/><br/>
-
-  <p>
-    <strong>Engineering intelligence at the edge of human + machine perception</strong><br/>
-    Final-year BS Artificial Intelligence • Karachi, Pakistan
-  </p>
-
-  <!-- Contact badges with neon style -->
-  <div>
-    <a href="mailto:armanfaisal0007@gmail.com">
-      <img src="https://img.shields.io/badge/Email-armarfaisal0007@gmail.com-%2300F0FF?style=for-the-badge&logo=gmail&logoColor=white&color=0F172A" alt="Email"/>
-    </a>
-    <a href="https://github.com/YOUR_USERNAME">
-      <img src="https://img.shields.io/badge/GitHub-%40YOUR_USERNAME-%2300F0FF?style=for-the-badge&logo=github&logoColor=white&color=0F172A" alt="GitHub"/>
-    </a>
-    <a href="https://linkedin.com/in/YOUR_LINKEDIN">
-      <img src="https://img.shields.io/badge/LinkedIn-Arman%20Faisal-%2300F0FF?style=for-the-badge&logo=linkedin&logoColor=white&color=0F172A" alt="LinkedIn"/>
-    </a>
-    <br/>
-    <img src="https://img.shields.io/badge/Phone-%2B92%20308%203255440-%2300F0FF?style=for-the-badge&logo=whatsapp&logoColor=white&color=0F172A" alt="Phone"/>
-  </div>
-
-  <br/>
-
-  <!-- Core identity with animated flair -->
-  <h2>⚡️ NEURAL CORE ⚡️</h2>
-
-  <p>Specializing in <strong>Computer Vision</strong>, <strong>NLP for low-resource languages</strong>, and <strong>scalable generative AI pipelines</strong>.<br/>
-  Bridging SOTA models → production-grade cloud-native APIs.</p>
-
-  <img src="https://readme-typing-svg.herokuapp.com?font=Roboto+Mono&size=18&duration=3500&pause=700&color=00FFFF&center=true&vCenter=true&width=520&lines=→+SAM-2+%26+GroundingDINO+powered+object+manipulation;→+Temporally+consistent+video+inpainting+(ProPainter);→+Urdu+Nastaliq+optimized+tokenization+(7.08%25+token+reduction);→+Few-shot+animal+re-identification+(ArcFace+%26+FAISS);→+Serverless+ML+inference+(AWS+Lambda+%26+ONNX)" alt="Typing skills" />
-
-</div>
-
-<hr/>
-
-<h2 align="center">🧬 TECH CONSTELLATION 🧬</h2>
-
-<div align="center">
-
-  <!-- AI / CV group -->
-  <img src="https://img.shields.io/badge/Computer%20Vision-SAM--2%20%E2%80%A2%20GroundingDINO%20%E2%80%A2%20YOLOv8%20%E2%80%A2%20ProPainter%20%E2%80%A2%20LaMa-0F172A?style=for-the-badge&logo=opencv&logoColor=00F0FF"/>
-  <br/>
-  <img src="https://img.shields.io/badge/Generative%20AI-Stable%20Diffusion%201.5%20(Inpainting)%20%E2%80%A2%20ControlNet-0F172A?style=for-the-badge&logoColor=00F0FF"/>
-  <br/>
-  <img src="https://img.shields.io/badge/Deep%20Learning-PyTorch%20%E2%80%A2%20TensorFlow%20%E2%80%A2%20ONNX%20%E2%80%A2%20ArcFace%20%E2%80%A2%20FAISS-0F172A?style=for-the-badge&logo=pytorch&logoColor=FF6F00"/>
-
-  <!-- Full-stack group -->
-  <br/><br/>
-  <img src="https://img.shields.io/badge/Backend-FastAPI%20%E2%80%A2%20Flask%20%E2%80%A2%20Django%20%E2%80%A2%20.NET%20MVC-0F172A?style=for-the-badge&logo=fastapi&logoColor=00F0FF"/>
-  <br/>
-  <img src="https://img.shields.io/badge/Frontend-React.js%20%E2%80%A2%20Tailwind%20CSS%20%E2%80%A2%20Supabase-0F172A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
-
-  <!-- Languages & Infra -->
-  <br/><br/>
-  <img src="https://img.shields.io/badge/Languages-Python%20%E2%80%A2%20C%2B%2B%20%E2%80%A2%20Java%20%E2%80%A2%20JavaScript-0F172A?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Cloud%20%26%20DevOps-AWS%20Lambda%20S3%20ECR%20%E2%80%A2%20Docker%20%E2%80%A2%20GitHub%20Actions-0F172A?style=for-the-badge&logo=amazonaws&logoColor=FF9900"/>
-
-</div>
-
-<hr/>
-
-<h2 align="center">🌌 KEY ARTIFACTS FROM THE NEURAL FRONTIER</h2>
-
-<div align="center">
-
-  <table>
-    <tr>
-      <th>Project</th>
-      <th>Core Tech</th>
-      <th>Impact</th>
-    </tr>
-    <tr>
-      <td><strong>ReScene – AI Object Removal & Video Inpainting</strong> (FYP)</td>
-      <td>SAM-2 • GroundingDINO • ProPainter • SD 1.5 • LaMa • FastAPI + React</td>
-      <td>Text/click-based object removal → temporally consistent video & image inpainting</td>
-    </tr>
-    <tr>
-      <td><strong>Urdu Two-Stage BPE Tokenizer</strong></td>
-      <td>Regex pre-tokenization • NFKC normalization • BPE</td>
-      <td>↓ 7.08% token fertility — better Urdu LLM performance</td>
-    </tr>
-    <tr>
-      <td><strong>AnimalCLEF25 Re-Identification</strong></td>
-      <td>Siamese Nets • ArcFace • Prototypical Nets • FAISS</td>
-      <td>One-shot / few-shot open-set wildlife re-ID pipeline</td>
-    </tr>
-    <tr>
-      <td><strong>Serverless MNIST Digit Recognizer</strong></td>
-      <td>AWS Lambda • Docker • ONNX Runtime</td>
-      <td>90% ↓ cold-start latency • cost-efficient inference</td>
-    </tr>
-  </table>
+<!-- Animated Header -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Arman%20Faisal&fontSize=80&fontAlignY=35&animation=twinkling&fontColor=fff&desc=AI%20Engineer%20%7C%20Full-Stack%20Developer&descAlignY=55&descSize=20" width="100%"/>
 
 </div>
 
 <div align="center">
-  <br/>
-  <img src="https://thumbs.dreamstime.com/b/glowing-network-interconnected-blue-lines-nodes-creates-futuristic-digital-landscape-evoking-sense-advanced-technology-353637815.jpg" width="600" alt="Neural Landscape"/>
-  <br/><br/>
-  <sub>Exploring latent spaces • one inference at a time</sub>
+  
+### 🧠 Building Intelligence, One Model at a Time
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=6C63FF&center=true&vCenter=true&random=false&width=600&lines=AI%2FML+Engineer+%26+Full-Stack+Developer;NLP+%7C+Computer+Vision+%7C+Cloud+Native;Optimizing+Models+for+Production;Building+Scalable+AI+Systems)](https://git.io/typing-svg)
+
 </div>
 
-<hr/>
+---
+
+<img align="right" alt="AI Coding" width="400" src="https://raw.githubusercontent.com/abhisheknaiidu/abhisheknaiidu/master/code.gif">
+
+### 👨‍💻 About Me
+
+🎓 Final-year **AI student** at FAST-NUCES  
+🔬 Specialized in **NLP**, **Computer Vision**, and **Cloud-Native AI**  
+⚡ Passionate about optimizing ML models for **low-resource languages**  
+🚀 Building **production-ready AI systems** with AWS & Docker  
+🌱 Currently exploring **MLOps** and **Serverless Architectures**  
+💡 Open to collaborating on **AI/ML research** and **innovative projects**
+
+<br clear="right"/>
+
+---
+
+### 🎓 Education
+
+<table>
+<tr>
+<td width="60%">
+
+**Bachelor of Science in Artificial Intelligence**  
+*National University of Computer & Emerging Sciences (FAST-NUCES)*  
+📍 Karachi, Pakistan | 🗓️ 2022 - 2026 (Expected)
+
+Building a strong foundation in machine learning, deep learning, and AI systems. Focused on practical applications of NLP, computer vision, and deploying AI solutions to production environments.
+
+</td>
+<td width="40%">
+
+**GCE A Levels** (Pre-Engineering)  
+*Cedar College*  
+🗓️ 2020 - 2022
+
+**GCE O Levels**  
+*St. Michael's Convent School*  
+🗓️ 2018 - 2020
+
+</td>
+</tr>
+</table>
+
+---
+
+### 🛠️ Tech Arsenal
+
+<details open>
+<summary><b>🤖 AI/ML & Data Science</b></summary>
+<br>
+
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![ONNX](https://img.shields.io/badge/ONNX-005CED?style=for-the-badge&logo=onnx&logoColor=white)
+
+</details>
+
+<details open>
+<summary><b>💻 Languages & Frameworks</b></summary>
+<br>
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+
+</details>
+
+<details open>
+<summary><b>☁️ Cloud & DevOps</b></summary>
+<br>
+
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)
+
+</details>
+
+---
+
+### 🚀 Featured Projects
+
+<table>
+<tr>
+<td width="50%">
+
+#### 🔤 [Urdu Two-Stage BPE Tokenizer](https://github.com/ArmanFaisal)
+**NLP • Tokenization • Low-Resource Languages**
+
+A script-aware tokenizer designed specifically for Urdu Nastalīq script to optimize LLM performance.
+
+🎯 **Impact:** 7.08% reduction in token fertility  
+⚡ **Tech:** Python, NLP, BPE, Unicode Normalization
+
+</td>
+<td width="50%">
+
+#### 🐾 [AnimalCLEF25 Re-ID System](https://github.com/ArmanFaisal)
+**Computer Vision • Deep Learning • Metric Learning**
+
+Deep metric learning pipeline for fine-grained animal re-identification in wildlife monitoring.
+
+🎯 **Focus:** Triplet Loss, Feature Extraction  
+⚡ **Tech:** PyTorch, OpenCV, Deep Metric Learning
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+#### ☁️ [Serverless MNIST Recognizer](https://github.com/ArmanFaisal)
+**MLOps • Serverless • Model Optimization**
+
+Production-ready digit recognition system deployed on AWS Lambda with Docker containerization.
+
+🎯 **Optimization:** 90% latency reduction  
+⚡ **Tech:** AWS Lambda, Docker, ONNX, FastAPI
+
+</td>
+<td width="50%">
+
+#### 🌐 [Gold Leaf Ghostwriting](https://github.com/ArmanFaisal)
+**Full-Stack • Modern Web • Tailwind v4**
+
+High-end responsive website with dark mode, Supabase backend, and modern CSS architecture.
+
+🎯 **Features:** Theme Provider, Lead Management  
+⚡ **Tech:** React, Tailwind CSS v4, Supabase
+
+</td>
+</tr>
+</table>
+
+---
+
+### 📊 GitHub Analytics
+
+<div align="center">
+  
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=ArmanFaisal&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&border_radius=10&hide_border=true&bg_color=0D1117&title_color=6C63FF&icon_color=6C63FF&text_color=C9D1D9"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArmanFaisal&layout=compact&theme=tokyonight&border_radius=10&hide_border=true&bg_color=0D1117&title_color=6C63FF&text_color=C9D1D9&langs_count=8"/>
+
+</div>
+
+<div align="center">
+  
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=ArmanFaisal&theme=tokyonight&hide_border=true&border_radius=10&background=0D1117&ring=6C63FF&fire=6C63FF&currStreakLabel=6C63FF)](https://git.io/streak-stats)
+
+</div>
+
+---
+
+### 🏆 Achievements & Certifications
+
+```python
+class AIEngineer:
+    def __init__(self):
+        self.name = "Arman Faisal"
+        self.role = "AI/ML Engineer & Full-Stack Developer"
+        self.location = "Karachi, Pakistan"
+        self.education = "BS Artificial Intelligence @ FAST-NUCES"
+        
+    def current_focus(self):
+        return [
+            "Optimizing NLP models for Urdu",
+            "Building serverless ML pipelines",
+            "Computer Vision research",
+            "Cloud-native AI architectures"
+        ]
+    
+    def get_achievements(self):
+        return {
+            "token_optimization": "7.08% fertility reduction in Urdu BPE",
+            "latency_reduction": "90% improvement in serverless inference",
+            "image_optimization": "70% reduction in Docker image size",
+            "production_systems": "Multiple AI systems in production"
+        }
+```
+
+---
+
+### 📫 Let's Connect!
 
 <div align="center">
 
-  <h3>「 The future is already here — it's just unevenly distributed. 」</h3>
-  <p>— William Gibson (re-wired for 2026)</p>
-
-  <br/>
-
-  <!-- Matrix rain animation (optional – replace with your own GIF if desired) -->
-  <img src="https://raw.githubusercontent.com/Rezmason/matrix/master/matrix.gif" width="480" alt="Matrix Rain"/>
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:armanfaisal0007@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/armanfaisal)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ArmanFaisal)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://armanfaisal.dev)
 
 </div>
+
+---
+
+<div align="center">
+
+### 💭 Random Dev Quote
+
+![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight)
+
+### 🐍 Contribution Graph
+
+![Snake animation](https://raw.githubusercontent.com/ArmanFaisal/ArmanFaisal/output/github-contribution-grid-snake-dark.svg)
+
+---
+
+<img src="https://komarev.com/ghpvc/?username=ArmanFaisal&label=Profile%20Views&color=6C63FF&style=for-the-badge" alt="Profile Views" />
+
+**✨ "The best way to predict the future is to invent it." – Alan Kay**
+
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%"/>
