@@ -48,57 +48,8 @@ This project implements a full end-to-end chatbot system for querying weather in
 ## 🏗️ Architecture
 
 ```
-╔══════════════════════════════════════════════════════════════════════╗
-║                        SYSTEM ARCHITECTURE                          ║
-╠══════════════════════════════════════════════════════════════════════╣
-║                                                                      ║
-║   ┌─────────────┐     Natural      ┌──────────────────┐             ║
-║   │             │     Language     │                  │             ║
-║   │    USER     │ ───────────────► │  DIALOGFLOW ES   │             ║
-║   │  (Browser / │                  │                  │             ║
-║   │   Mobile)   │ ◄─────────────── │  NLP / Intent    │             ║
-║   │             │   Formatted      │  Classification  │             ║
-║   └─────────────┘   Response       └────────┬─────────┘             ║
-║                                             │                       ║
-║                                    WebhookRequest (JSON)            ║
-║                                             │                       ║
-║                                    ┌────────▼─────────┐             ║
-║                                    │                  │             ║
-║                                    │   ngrok Tunnel   │             ║
-║                                    │  (HTTPS ↔ HTTP)  │             ║
-║                                    │                  │             ║
-║                                    └────────┬─────────┘             ║
-║                                             │                       ║
-║                                    ┌────────▼─────────┐             ║
-║                                    │                  │             ║
-║                                    │  FASTAPI SERVER  │             ║
-║                                    │   POST /webhook  │             ║
-║                                    │                  │             ║
-║                                    │  ┌────────────┐  │             ║
-║                                    │  │  Intent    │  │             ║
-║                                    │  │  Router    │  │             ║
-║                                    │  └─────┬──────┘  │             ║
-║                                    │        │         │             ║
-║                                    │  ┌─────▼──────┐  │             ║
-║                                    │  │  Weather   │  │             ║
-║                                    │  │  Service   │  │             ║
-║                                    │  └─────┬──────┘  │             ║
-║                                    └────────┼─────────┘             ║
-║                                             │                       ║
-║                                      REST API Call                  ║
-║                                      (city, date)                   ║
-║                                             │                       ║
-║                                    ┌────────▼─────────┐             ║
-║                                    │                  │             ║
-║                                    │  OPENWEATHERMAP  │             ║
-║                                    │      API         │             ║
-║                                    │  /weather        │             ║
-║                                    │  /forecast       │             ║
-║                                    │  /onecall        │             ║
-║                                    │                  │             ║
-║                                    └──────────────────┘             ║
-║                                                                      ║
-╚══════════════════════════════════════════════════════════════════════╝
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/296708d4-8dca-4888-b813-49dc242f0fc2" />
+
 ```
 
 ---
