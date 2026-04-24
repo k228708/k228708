@@ -1,3 +1,4 @@
+<img width="2816" height="1536" alt="Gemini_Generated_Image_vkfuvwvkfuvwvkfu" src="https://github.com/user-attachments/assets/29711ea8-7160-4ec3-bbf1-79d773429f56" />
 
 
 # 🌤️ Weather Info & Forecast Bot
@@ -47,7 +48,8 @@ This project implements a full end-to-end chatbot system for querying weather in
 
 ## 🏗️ Architecture
 
-![Architecture Diagram](https://github.com/user-attachments/assets/47da9187-fa31-4b8d-a9c7-1c06ed77fe1f)
+![Architecture Diagram](https://github.com/user-attachments/assets/34875522-cec8-47b4-b65b-6d1c7d383a62)
+
 
 
 
