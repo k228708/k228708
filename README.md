@@ -157,7 +157,7 @@ weather_bot/
 
 ---
 
-## 🤖 Intents & NLP Design
+## 🤖 Intents 
 
 ### Intent Map
 
