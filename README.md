@@ -1,322 +1,602 @@
-# <img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="30px"> Welcome to my Neural Network
-
 <div align="center">
 
-```ascii
-    ___    ____  __  ______    _   __   _________   _____ ____ ___ __
-   /   |  / __ \/  |/  /   |  / | / /  / ____/   | /  _// __ / ___/ /
-  / /| | / /_/ / /|_/ / /| | /  |/ /  / /_  / /| | / / / /_/ \__ \/ /
- / ___ |/ _, _/ /  / / ___ |/ /|  /  / __/ / ___ |/ / _\__  /__/ / /___
-/_/  |_/_/ |_/_/  /_/_/  |_/_/ |_/  /_/   /_/  |_/___//____/____/_____/
+# 🌤️ Weather Info & Forecast Bot
 
-```
+### Dialogflow ES × FastAPI × OpenWeatherMap
 
-<h3>
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
-  AI/ML Engineer | Full-Stack Developer | Cloud Architect
-  <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="28">
-</h3>
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![Dialogflow](https://img.shields.io/badge/Dialogflow-ES-FF9800?style=for-the-badge&logo=dialogflow&logoColor=white)](https://dialogflow.cloud.google.com)
+[![OpenWeatherMap](https://img.shields.io/badge/OpenWeatherMap-API-E96E2C?style=for-the-badge&logo=openweathermap&logoColor=white)](https://openweathermap.org/api)
+[![ngrok](https://img.shields.io/badge/ngrok-Tunnel-1F1E37?style=for-the-badge&logo=ngrok&logoColor=white)](https://ngrok.com)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=25&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&multiline=true&repeat=true&random=false&width=800&height=100&lines=Optimizing+Neural+Networks+for+Low-Resource+Languages;Building+Serverless+AI+Architectures;%F0%9F%A7%A0+Training+Models+%7C+%E2%98%81%EF%B8%8F+Deploying+to+Cloud+%7C+%F0%9F%9A%80+Scaling+Systems)](https://git.io/typing-svg)
+> A production-ready conversational weather bot that delivers real-time and forecasted weather data
+> for any city worldwide — built with Google Dialogflow ES, a FastAPI webhook backend, and the OpenWeatherMap API.
 
 </div>
 
 ---
 
-## 🎯 System.getCurrentStatus()
+## 📋 Table of Contents
 
-```javascript
-const arman = {
-  location: "Karachi, Pakistan 🇵🇰",
-  education: "BS Artificial Intelligence @ FAST-NUCES",
-  currentMission: "Bridging AI Research & Production Deployment",
-  
-  specializations: {
-    nlp: ["BPE Tokenization", "Low-Resource Languages", "Urdu NLP"],
-    vision: ["Re-Identification Systems", "Metric Learning", "OpenCV"],
-    mlops: ["AWS Lambda", "Docker", "ONNX Optimization", "Serverless"]
-  },
-  
-  achievements: {
-    tokenOptimization: "7.08% reduction in Urdu token fertility",
-    latencyBoost: "90% cold-start latency reduction",
-    imageCompression: "70% Docker image size optimization",
-    systemsDeployed: "Multiple production AI systems"
-  },
-  
-  currentlyLearning: ["Advanced MLOps", "Distributed Training", "Edge AI"],
-  openToCollaborate: true,
-  askMeAbout: ["AI", "NLP", "Cloud Architecture", "Full-Stack Dev"]
-};
+- [Overview](#-overview)
+- [Architecture](#-architecture)
+- [Conversational Flow](#-conversational-flow)
+- [Project Structure](#-project-structure)
+- [Intents & NLP Design](#-intents--nlp-design)
+- [API Reference](#-api-reference)
+- [Setup & Installation](#-setup--installation)
+- [Sample Outputs](#-sample-outputs)
+- [Test Prompts](#-test-prompts)
+
+---
+
+## 🧭 Overview
+
+This project implements a full end-to-end chatbot system for querying weather information through natural language. The bot handles:
+
+| Capability | Description |
+|---|---|
+| 🌡️ **Current Weather** | Real-time weather for any global city |
+| 📅 **Specific Date Forecast** | Weather for a user-specified future date |
+| 📆 **N-Day Forecast** | Custom forecast window (e.g., next 3 days) |
+| 🗓️ **8-Day Forecast** | Full forecast horizon in one request |
+| ⚠️ **Past Date Guard** | Graceful error for historical date queries |
+
+---
+
+## 🏗️ Architecture
+
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║                        SYSTEM ARCHITECTURE                          ║
+╠══════════════════════════════════════════════════════════════════════╣
+║                                                                      ║
+║   ┌─────────────┐     Natural      ┌──────────────────┐             ║
+║   │             │     Language     │                  │             ║
+║   │    USER     │ ───────────────► │  DIALOGFLOW ES   │             ║
+║   │  (Browser / │                  │                  │             ║
+║   │   Mobile)   │ ◄─────────────── │  NLP / Intent    │             ║
+║   │             │   Formatted      │  Classification  │             ║
+║   └─────────────┘   Response       └────────┬─────────┘             ║
+║                                             │                       ║
+║                                    WebhookRequest (JSON)            ║
+║                                             │                       ║
+║                                    ┌────────▼─────────┐             ║
+║                                    │                  │             ║
+║                                    │   ngrok Tunnel   │             ║
+║                                    │  (HTTPS ↔ HTTP)  │             ║
+║                                    │                  │             ║
+║                                    └────────┬─────────┘             ║
+║                                             │                       ║
+║                                    ┌────────▼─────────┐             ║
+║                                    │                  │             ║
+║                                    │  FASTAPI SERVER  │             ║
+║                                    │   POST /webhook  │             ║
+║                                    │                  │             ║
+║                                    │  ┌────────────┐  │             ║
+║                                    │  │  Intent    │  │             ║
+║                                    │  │  Router    │  │             ║
+║                                    │  └─────┬──────┘  │             ║
+║                                    │        │         │             ║
+║                                    │  ┌─────▼──────┐  │             ║
+║                                    │  │  Weather   │  │             ║
+║                                    │  │  Service   │  │             ║
+║                                    │  └─────┬──────┘  │             ║
+║                                    └────────┼─────────┘             ║
+║                                             │                       ║
+║                                      REST API Call                  ║
+║                                      (city, date)                   ║
+║                                             │                       ║
+║                                    ┌────────▼─────────┐             ║
+║                                    │                  │             ║
+║                                    │  OPENWEATHERMAP  │             ║
+║                                    │      API         │             ║
+║                                    │  /weather        │             ║
+║                                    │  /forecast       │             ║
+║                                    │  /onecall        │             ║
+║                                    │                  │             ║
+║                                    └──────────────────┘             ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
 
-## 🎓 Education & Academic Journey
-
-<table>
-<tr>
-<td width="70%">
-
-### 🎯 Bachelor of Science in Artificial Intelligence
-**FAST - National University of Computer & Emerging Sciences**  
-📍 Karachi, Pakistan | 🗓️ 2022 - 2026 (Expected)
-
-**Focus Areas:**
-- 🧠 Natural Language Processing & Low-Resource Languages
-- 👁️ Computer Vision & Deep Metric Learning
-- ☁️ Cloud-Native AI Architectures & MLOps
-- 🚀 Production ML Systems & Model Optimization
-
-Combining rigorous AI theory with hands-on experience in deploying real-world ML systems. Active in research on optimizing models for Urdu and building scalable inference pipelines.
-
-</td>
-<td width="30%">
-
-### 📚 Pre-University
-
-**GCE A Levels**  
-*Cedar College*  
-Pre-Engineering  
-🗓️ 2020 - 2022
-
-**GCE O Levels**  
-*St. Michael's Convent*  
-🗓️ 2018 - 2020
-
-</td>
-</tr>
-</table>
-
----
-
-## ⚡ Tech Stack & Expertise
-
-<details open>
-<summary><b>🤖 Machine Learning & AI</b></summary>
-
-<br>
-
-| Category | Technologies |
-|----------|-------------|
-| **Deep Learning** | ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white) ![ONNX](https://img.shields.io/badge/ONNX-005CED?style=flat-square&logo=onnx&logoColor=white) |
-| **NLP** | ![Transformers](https://img.shields.io/badge/🤗_Transformers-FFD21E?style=flat-square) ![spaCy](https://img.shields.io/badge/spaCy-09A3D5?style=flat-square&logo=spacy&logoColor=white) BPE Tokenization |
-| **Computer Vision** | ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white) ![PIL](https://img.shields.io/badge/Pillow-3E4348?style=flat-square) Metric Learning |
-| **Data Science** | ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white) ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white) |
-
-</details>
-
-<details open>
-<summary><b>💻 Development Stack</b></summary>
-
-<br>
-
-**Languages:**  
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white)
-
-**Frontend:**  
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
-![Tailwind](https://img.shields.io/badge/Tailwind_v4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-
-**Backend:**  
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-
-</details>
-
-<details open>
-<summary><b>☁️ Cloud & DevOps</b></summary>
-
-<br>
-
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Lambda](https://img.shields.io/badge/AWS_Lambda-FF9900?style=flat-square&logo=aws-lambda&logoColor=white)
-![S3](https://img.shields.io/badge/AWS_S3-569A31?style=flat-square&logo=amazon-s3&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-
-</details>
-
----
-
-## 🚀 Featured Projects
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🔤 [Urdu Two-Stage BPE Tokenizer](https://github.com/ArmanFaisal)
-
-> Solving LLM inefficiencies for low-resource languages
-
-**The Challenge:** LLMs tokenize Urdu inefficiently, wasting context window space and slowing inference.
-
-**The Solution:** Built a script-aware two-stage BPE tokenizer with:
-- ✅ Regex-based pre-tokenization
-- ✅ Unicode normalization
-- ✅ Linguistic validity preservation
-
-**Impact:** 🎯 **7.08% reduction** in token fertility
-
-**Stack:** `Python` `NLP` `BPE` `Unicode` `Regex`
-
-</td>
-<td width="50%" valign="top">
-
-### 🐾 [AnimalCLEF25 Re-ID System](https://github.com/ArmanFaisal)
-
-> Deep metric learning for wildlife monitoring
-
-**The Challenge:** Fine-grained animal identification at scale for ecological research.
-
-**The Solution:** End-to-end Re-ID pipeline featuring:
-- ✅ Deep metric learning with triplet loss
-- ✅ Automated preprocessing pipeline
-- ✅ Similarity-based retrieval system
-
-**Impact:** 🎯 Scalable wildlife tracking
-
-**Stack:** `PyTorch` `OpenCV` `Metric Learning` `Computer Vision`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### ☁️ [Serverless MNIST Digit Recognizer](https://github.com/ArmanFaisal)
-
-> Production-grade ML inference at scale
-
-**The Challenge:** Deploy ML models with minimal latency and cost.
-
-**The Solution:** Serverless architecture with:
-- ✅ AWS Lambda + Docker containerization
-- ✅ ONNX Runtime optimization
-- ✅ FastAPI for REST endpoints
-
-**Impact:** 🎯 **90% latency reduction** | **70% image size reduction**
-
-**Stack:** `AWS Lambda` `Docker` `ONNX` `FastAPI` `Python`
-
-</td>
-<td width="50%" valign="top">
-
-### 🌐 [Gold Leaf Ghostwriting](https://github.com/ArmanFaisal)
-
-> Modern web platform with Tailwind v4
-
-**The Challenge:** High-end responsive site with seamless UX.
-
-**The Solution:** Cutting-edge web stack featuring:
-- ✅ React + Tailwind CSS v4
-- ✅ Advanced dark mode architecture
-- ✅ Supabase backend integration
-
-**Impact:** 🎯 Production-ready client platform
-
-**Stack:** `React` `Tailwind v4` `Supabase` `CSS Variables`
-
-</td>
-</tr>
-</table>
-
----
-
-## 📊 GitHub Metrics
-
-<div align="center">
-
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=ArmanFaisal&show_icons=true&theme=github_dark&include_all_commits=true&count_private=true&border_radius=8&hide_border=true&bg_color=0d1117&title_color=00ff41&icon_color=00ff41&text_color=c9d1d9&border_color=30363d"/>
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ArmanFaisal&layout=compact&theme=github_dark&border_radius=8&hide_border=true&bg_color=0d1117&title_color=00ff41&text_color=c9d1d9&border_color=30363d&langs_count=8"/>
-
-<img width="90%" src="https://github-readme-streak-stats.herokuapp.com?user=ArmanFaisal&theme=github-dark-blue&hide_border=true&border_radius=8&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&dates=C9D1D9&sideNums=00FF41&currStreakNum=00FF41&sideLabels=C9D1D9"/>
-
-<img width="90%" src="https://github-readme-activity-graph.vercel.app/graph?username=ArmanFaisal&theme=github-compact&hide_border=true&bg_color=0d1117&color=00ff41&line=00ff41&point=c9d1d9&area=true&area_color=00ff41"/>
-
-</div>
-
----
-
-## 💼 Professional Timeline
-
-```mermaid
-gantt
-    title Development Journey
-    dateFormat YYYY-MM
-    section Education
-    BS Artificial Intelligence    :2022-09, 2026-06
-    section Experience
-    C++ Developer Intern          :2025-05, 2025-06
-    section Research
-    Urdu NLP Optimization         :2024-08, 2024-10
-    AnimalCLEF Re-ID System       :2024-11, 2025-01
-    Serverless ML Infrastructure  :2024-06, 2024-08
+## 💬 Conversational Flow
+
+```
+╔══════════════════════════════════════════════════════════════════════════╗
+║                      CONVERSATIONAL FLOW DIAGRAM                        ║
+╠══════════════════════════════════════════════════════════════════════════╣
+║                                                                          ║
+║   USER                    DIALOGFLOW BOT               WEBHOOK + API     ║
+║    │                            │                            │           ║
+║    │──── "Hi" ─────────────────►│                            │           ║
+║    │                            │                            │           ║
+║    │◄─── "Hi! I'm the Weather   │                            │           ║
+║    │      Bot. How may I        │                            │           ║
+║    │      help you?" ───────────│                            │           ║
+║    │                            │                            │           ║
+║    │──── "What is the current   │                            │           ║
+║    │      weather?" ───────────►│                            │           ║
+║    │                            │                            │           ║
+║    │◄─── "Please provide        │                            │           ║
+║    │      your city." ──────────│                            │           ║
+║    │                            │                            │           ║
+║    │──── "My city is Karachi" ─►│                            │           ║
+║    │                            │──── city ─────────────────►│           ║
+║    │                            │                            │──► OWM    ║
+║    │                            │                            │◄── data   ║
+║    │                            │◄─── weather_info ──────────│           ║
+║    │◄─── "The current weather   │                            │           ║
+║    │      for Karachi is..."  ──│                            │           ║
+║    │                            │                            │           ║
+║    │──── "Weather forecast from │                            │           ║
+║    │      April 27 for          │                            │           ║
+║    │      Toronto" ────────────►│                            │           ║
+║    │                            │──── city, date ───────────►│           ║
+║    │                            │                            │──► OWM    ║
+║    │                            │                            │◄── data   ║
+║    │                            │◄─── weather_info ──────────│           ║
+║    │◄─── "Forecasted weather    │                            │           ║
+║    │      for Toronto Apr 27"───│                            │           ║
+║    │                            │                            │           ║
+║    │──── "Thanks!" ────────────►│                            │           ║
+║    │◄─── "Is there anything     │                            │           ║
+║    │      else I can help       │                            │           ║
+║    │      you with?" ───────────│                            │           ║
+║    │                            │                            │           ║
+║    │──── "No thanks" ──────────►│                            │           ║
+║    │◄─── "Thank you for         │                            │           ║
+║    │      contacting. Goodbye!" │                            │           ║
+║    │                            │                            │           ║
+╚══════════════════════════════════════════════════════════════════════════╝
 ```
 
 ---
 
-## 🏆 Achievements Unlocked
+## 📁 Project Structure
 
-<div align="center">
-
-| 🎯 Optimization | 📊 Metrics | 🚀 Production |
-|----------------|-----------|---------------|
-| Token Fertility: **-7.08%** | Models Deployed: **5+** | Serverless Systems: **3** |
-| Latency: **-90%** | Languages: **8+** | Docker Images: **10+** |
-| Image Size: **-70%** | GitHub Stars: **Growing** | API Endpoints: **15+** |
-
-</div>
-
----
-
-## 📫 Transmit Signal
-
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-armanfaisal0007%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:armanfaisal0007@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/armanfaisal)
-[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ArmanFaisal)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://armanfaisal.dev)
-
-</div>
-
----
-
-<div align="center">
-
-### 💡 Daily Wisdom
-
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&quote=The%20best%20way%20to%20predict%20the%20future%20is%20to%20invent%20it.&author=Alan%20Kay)
-
-### 🐍 Contribution Snake
-
-![Snake animation](https://raw.githubusercontent.com/ArmanFaisal/ArmanFaisal/output/github-contribution-grid-snake-dark.svg)
-
-<img src="https://komarev.com/ghpvc/?username=ArmanFaisal&label=Neural%20Network%20Visitors&color=00ff41&style=flat-square" alt="Profile Views" />
-
----
-
-```ascii
-╔═══════════════════════════════════════════════════════════╗
-║  "Any sufficiently advanced technology is                 ║
-║   indistinguishable from magic."                          ║
-║                                    - Arthur C. Clarke     ║
-╚═══════════════════════════════════════════════════════════╝
+```
+weather_bot/
+│
+├── 📄 main.py                  # FastAPI app entry point & route definitions
+├── 📄 webhook_handler.py       # Intent routing & request parsing logic
+├── 📄 weather_service.py       # OpenWeatherMap API integration layer
+├── 📄 response_formatter.py    # Styled text output formatter
+│
+├── 📄 .env                     # Environment variables (API keys) — NOT committed
+├── 📄 requirements.txt         # Python package dependencies
+└── 📄 README.md                # This file
 ```
 
-**⚡ Powered by curiosity, driven by innovation**
+### Module Responsibilities
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        main.py                              │
+│   FastAPI app — defines POST /webhook route                 │
+│   Receives raw Dialogflow JSON body                         │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ passes body dict
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   webhook_handler.py                        │
+│   Reads intent name from queryResult                        │
+│   Extracts city / date / number parameters                  │
+│   Routes to the correct async handler function              │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ calls with city, date, days
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   weather_service.py                        │
+│   Geocodes city to lat/lon via Geocoding API                │
+│   Fetches current weather or forecast from OWM              │
+│   Returns structured Python dict                            │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ raw weather dict
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  response_formatter.py                      │
+│   Formats weather dict into styled human-readable text      │
+│   Handles emoji mapping, box headers, date formatting       │
+│   Returns fulfillmentText string back to webhook_handler    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🤖 Intents & NLP Design
+
+### Intent Map
+
+```
+Dialogflow ES Agent — Weather Bot
+│
+├── Default Welcome Intent
+│   └── Triggers on: "Hi", "Hello", "Hey", "Start"
+│   └── Response: Greeting message (no webhook)
+│
+├── weather.current                          [WEBHOOK ✓]
+│   ├── Required param: @sys.geo-city
+│   └── Triggers on: "What's the weather in London?"
+│
+├── weather.forecast                         [WEBHOOK ✓]
+│   ├── Required param: @sys.geo-city
+│   ├── Optional param: @sys.date
+│   └── Triggers on: "Forecast for Karachi"
+│
+├── weather.forecast.specific-date          [WEBHOOK ✓]
+│   ├── Required param: @sys.geo-city
+│   ├── Required param: @sys.date
+│   └── Triggers on: "Weather in Toronto on April 27"
+│
+├── weather.forecast.days                   [WEBHOOK ✓]
+│   ├── Required param: @sys.geo-city
+│   ├── Required param: @sys.number
+│   └── Triggers on: "Forecast for Karachi for next 3 days"
+│
+├── weather.thanks
+│   └── Triggers on: "Thanks", "Thank you"
+│   └── Response: "Is there anything else I can help you with?"
+│
+├── weather.goodbye
+│   └── Triggers on: "Bye", "No thanks", "That's all"
+│   └── Response: "Thank you for contacting. Goodbye!"
+│
+└── Default Fallback Intent
+    └── Triggers on: Unrecognised input
+    └── Response: Suggests weather-related queries
+```
+
+### Parameter Extraction Logic
+
+```
+Incoming Dialogflow Parameters
+         │
+         ├── "city" or "geo-city" ──► extract_city()
+         │        │
+         │        ├── String  → use directly
+         │        └── Dict    → extract .city or .name key
+         │
+         ├── "date" or "date-time" ──► extract_date()
+         │        │
+         │        └── ISO 8601 string → datetime.fromisoformat() → date object
+         │
+         └── "number" or "days" ──► extract_days_number()
+                  │
+                  └── Float string → cast to int → capped at 8
+```
+
+---
+
+## 📡 API Reference
+
+### Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/` | Health check |
+| `GET` | `/health` | Health status (JSON) |
+| `POST` | `/webhook` | Dialogflow fulfillment webhook |
+
+### Webhook Request Format (Dialogflow → FastAPI)
+
+```json
+POST /webhook
+Content-Type: application/json
+
+{
+  "queryResult": {
+    "queryText": "Weather in Toronto on April 27",
+    "intent": {
+      "displayName": "weather.forecast.specific-date"
+    },
+    "parameters": {
+      "geo-city": "Toronto",
+      "date": "2026-04-27T12:00:00+00:00"
+    }
+  }
+}
+```
+
+### Webhook Response Format (FastAPI → Dialogflow)
+
+```json
+{
+  "fulfillmentText": "╔══════...\n📍 TORONTO — WEATHER FORECAST\n...",
+  "fulfillmentMessages": [
+    {
+      "text": {
+        "text": ["╔══...📍 TORONTO — WEATHER FORECAST..."]
+      }
+    }
+  ]
+}
+```
+
+### Intent Routing
+
+```
+POST /webhook
+      │
+      ▼
+  Read intent.displayName
+      │
+      ├── "weather.current"                → handle_current_weather()
+      ├── "weather.forecast"               → handle_forecast()
+      ├── "weather.forecast.specific-date" → handle_specific_date_weather()
+      ├── "weather.forecast.days"          → handle_forecast_n_days()
+      └── (unknown)                        → default fallback message
+```
+
+---
+
+## ⚙️ Setup & Installation
+
+### Prerequisites
+
+| Tool | Version | Purpose |
+|------|---------|---------|
+| Python | 3.10+ | Runtime |
+| pip | latest | Package manager |
+| ngrok | any | HTTPS tunnel for local dev |
+| OpenWeatherMap account | — | Free API key |
+| Google account | — | Dialogflow ES access |
+
+---
+
+### Step 1 — Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/weather-bot.git
+cd weather-bot
+```
+
+---
+
+### Step 2 — Create and activate virtual environment
+
+```bash
+# Create
+python -m venv venv
+
+# Activate on Windows
+venv\Scripts\activate
+
+# Activate on macOS / Linux
+source venv/bin/activate
+```
+
+---
+
+### Step 3 — Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### Step 4 — Configure environment variables
+
+Create a `.env` file in the project root:
+
+```bash
+OPENWEATHER_API_KEY=your_actual_api_key_here
+```
+
+> Get your free key at [openweathermap.org/api](https://openweathermap.org/api).
+> For 8-day forecasts, subscribe to **One Call API 3.0** (free tier: 1,000 calls/day).
+
+---
+
+### Step 5 — Run the FastAPI server
+
+```bash
+uvicorn main:app --reload --port 8000
+```
+
+| URL | Purpose |
+|-----|---------|
+| `http://localhost:8000` | Server root |
+| `http://localhost:8000/docs` | Swagger UI (interactive docs) |
+| `http://localhost:8000/redoc` | ReDoc API docs |
+
+---
+
+### Step 6 — Expose with ngrok
+
+```bash
+# Port must match uvicorn port above
+ngrok http 8000
+```
+
+Copy the HTTPS forwarding URL shown in the terminal:
+```
+Forwarding   https://xxxx-xxxx.ngrok-free.app -> http://localhost:8000
+```
+
+> ⚠️ **Common mistake**: ngrok port must match uvicorn port exactly.
+
+---
+
+### Step 7 — Configure Dialogflow Fulfillment
+
+1. Open [dialogflow.cloud.google.com](https://dialogflow.cloud.google.com)
+2. Select your agent → **Fulfillment** in the left sidebar
+3. Toggle **Webhook** to **Enabled**
+4. Paste URL: `https://xxxx-xxxx.ngrok-free.app/webhook`
+5. Click **Save**
+
+---
+
+### Step 8 — Verify the connection
+
+```bash
+# Health check
+curl https://xxxx-xxxx.ngrok-free.app/
+# Expected: {"status":"ok","message":"Weather Bot Webhook is running 🌤️"}
+
+# Test webhook directly
+curl -X POST https://xxxx-xxxx.ngrok-free.app/webhook \
+  -H "Content-Type: application/json" \
+  -d '{"queryResult":{"intent":{"displayName":"weather.current"},"parameters":{"geo-city":"Karachi"}}}'
+```
+
+---
+
+## 📸 Sample Outputs
+
+### Current Weather
+```
+╔══════════════════════════════╗
+║ 📍 KARACHI — CURRENT WEATHER ║
+╚══════════════════════════════╝
+🗓️  24 Apr 2026
+──────────────────────────────────────
+📅 Friday, 24 Apr 2026
+☀️ Clear sky
+🌡️  High: 36.2°C | Low: 28.1°C | Avg: 32.1°C
+🌧️  Rain chance: 0%
+💧 Humidity: 62%
+💨 Wind: 18.3 km/h
+```
+
+### Specific Date Forecast
+```
+╔══════════════════════════════════╗
+║ 📍 TORONTO — WEATHER FORECAST   ║
+╚══════════════════════════════════╝
+🗓️  27 Apr 2026
+──────────────────────────────────────
+📅 Monday, 27 Apr 2026
+⛅ Partly cloudy
+🌡️  High: 19.4°C | Low: 6.5°C | Avg: 12.6°C
+🌧️  Rain chance: 15%
+💧 Humidity: 48%
+💨 Wind: 11.5 km/h
+```
+
+### Past Date Error
+```
+⚠️ Sorry! I cannot show weather for 20 Apr 2026 because it's in the past.
+I can only provide:
+  • Current weather 🌤️
+  • Forecast for today and up to 8 days ahead 📅
+
+Try asking: "What's the weather in Toronto today?"
+```
+
+---
+
+## 🧪 Test Prompts
+
+### Current Weather
+```
+What is the weather in Karachi?
+Current weather in London
+How is the weather in Dubai?
+```
+
+### Default 8-Day Forecast
+```
+Forecast for Karachi
+Weather forecast for New York
+Show forecast for Paris
+```
+
+### Specific Date (Future)
+```
+What will the weather be in Toronto on April 27?
+Weather in London on May 1st 2026
+How will the weather be in Berlin on April 30?
+```
+
+### N-Day Forecast
+```
+Forecast for Karachi for next 3 days
+Show me 5 day forecast for Dubai
+Next 2 days weather for London
+```
+
+### Past Date — Expected Error Response
+```
+Weather in Toronto on April 20 2026
+What was the weather in Karachi on March 15?
+```
+
+### Slot Filling
+```
+What is the weather?
+→ Bot: "Please provide your city."
+→ You: Karachi
+```
+
+---
+
+## 🔁 Full Data Flow
+
+```
+User types message
+      │
+      ▼
+Dialogflow NLP classifies intent + extracts entities
+      │
+      ├── No webhook needed? ──────────────────► Direct bot response
+      │   (greetings, thanks, goodbye)
+      │
+      └── Webhook enabled? ──────────────────── POST to /webhook
+                │
+                ▼
+          FastAPI receives Dialogflow JSON
+                │
+                ▼
+          webhook_handler.py
+          extracts: city, date, days
+                │
+                ├── Past date detected? ──────► Error message response
+                │
+                ├── Current weather? ─────────► GET /data/2.5/weather
+                │
+                ├── Specific date? ───────────► GET /data/3.0/onecall
+                │                               (fallback: /data/2.5/forecast)
+                │
+                └── N-day forecast? ──────────► GET /data/3.0/onecall
+                                                (fallback: /data/2.5/forecast)
+                              │
+                              ▼
+                    response_formatter.py
+                    builds styled text block
+                              │
+                              ▼
+                    fulfillmentText → Dialogflow ES
+                              │
+                              ▼
+                    Rendered in Dialogflow Chat UI
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| NLP / Chatbot | Google Dialogflow ES | Intent classification & entity extraction |
+| Backend Framework | Python FastAPI | Webhook server & REST API |
+| ASGI Server | Uvicorn | Production-grade async server |
+| HTTP Client | HTTPX (async) | Non-blocking API calls to OWM |
+| Weather Data | OpenWeatherMap API v2.5 / v3.0 | Real-time & forecast weather data |
+| Dev Tunnel | ngrok | Expose localhost over HTTPS |
+| Config | python-dotenv | Environment variable management |
+
+---
+
+<div align="center">
+
+Built for **Evaluation Test 1** — Weather Info & Forecast Bot
+
+Submitted to [submissions@interactcx.com](mailto:submissions@interactcx.com)
 
 </div>
