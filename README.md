@@ -1,5 +1,3 @@
-<img width="2816" height="1536" alt="Gemini_Generated_Image_vkfuvwvkfuvwvkfu" src="https://github.com/user-attachments/assets/29711ea8-7160-4ec3-bbf1-79d773429f56" />
-
 
 # 🌤️ Weather Info & Forecast Bot
 
