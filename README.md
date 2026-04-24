@@ -48,8 +48,8 @@ This project implements a full end-to-end chatbot system for querying weather in
 ## 🏗️ Architecture
 
 ```
-<img width="2816" height="1536" alt="Gemini_Generated_Image_xii0f6xii0f6xii0" src="https://github.com/user-attachments/assets/0649abf8-c18d-4655-b33d-8e318a797ee9" />
-<div align="center">
+<img width="2816" height="1536" alt="Gemini_Generated_Image_xii0f6xii0f6xii0" src="https://github.com/user-attachments/assets/47da9187-fa31-4b8d-a9c7-1c06ed77fe1f" />
+
 
 ```
 
