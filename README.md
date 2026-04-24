@@ -266,7 +266,7 @@ Incoming Dialogflow Parameters
          │
          └── "number" or "days" ──► extract_days_number()
                   │
-                  └── Float string → cast to int → capped at 8
+                  └── Float string → cast to int → capped at 5
 ```
 
 ---
@@ -388,21 +388,21 @@ OPENWEATHER_API_KEY=your_actual_api_key_here
 ```
 
 > Get your free key at [openweathermap.org/api](https://openweathermap.org/api).
-> For 8-day forecasts, subscribe to **One Call API 3.0** (free tier: 1,000 calls/day).
+> For 5-day forecasts, subscribe to **One Call API 3.0** (free tier: 1,000 calls/day).
 
 ---
 
 ### Step 5 — Run the FastAPI server
 
 ```bash
-uvicorn main:app --reload --port 8000
+uvicorn main:app --reload --port 8080
 ```
 
 | URL | Purpose |
 |-----|---------|
-| `http://localhost:8000` | Server root |
-| `http://localhost:8000/docs` | Swagger UI (interactive docs) |
-| `http://localhost:8000/redoc` | ReDoc API docs |
+| `http://localhost:8080` | Server root |
+| `http://localhost:8080/docs` | Swagger UI (interactive docs) |
+| `http://localhost:8080/redoc` | ReDoc API docs |
 
 ---
 
@@ -410,12 +410,12 @@ uvicorn main:app --reload --port 8000
 
 ```bash
 # Port must match uvicorn port above
-ngrok http 8000
+ngrok http 8080
 ```
 
 Copy the HTTPS forwarding URL shown in the terminal:
 ```
-Forwarding   https://xxxx-xxxx.ngrok-free.app -> http://localhost:8000
+Forwarding   https://xxxx-xxxx.ngrok-free.app -> http://localhost:8080
 ```
 
 > ⚠️ **Common mistake**: ngrok port must match uvicorn port exactly.
@@ -500,7 +500,7 @@ Current weather in London
 How is the weather in Dubai?
 ```
 
-### Default 8-Day Forecast
+### Default 5-Day Forecast
 ```
 Forecast for Karachi
 Weather forecast for New York
@@ -534,56 +534,13 @@ What is the weather?
 → You: Karachi
 ```
 
----
 
-## 🔁 Full Data Flow
-
-```
-User types message
-      │
-      ▼
-Dialogflow NLP classifies intent + extracts entities
-      │
-      ├── No webhook needed? ──────────────────► Direct bot response
-      │   (greetings, thanks, goodbye)
-      │
-      └── Webhook enabled? ──────────────────── POST to /webhook
-                │
-                ▼
-          FastAPI receives Dialogflow JSON
-                │
-                ▼
-          webhook_handler.py
-          extracts: city, date, days
-                │
-                ├── Past date detected? ──────► Error message response
-                │
-                ├── Current weather? ─────────► GET /data/2.5/weather
-                │
-                ├── Specific date? ───────────► GET /data/3.0/onecall
-                │                               (fallback: /data/2.5/forecast)
-                │
-                └── N-day forecast? ──────────► GET /data/3.0/onecall
-                                                (fallback: /data/2.5/forecast)
-                              │
-                              ▼
-                    response_formatter.py
-                    builds styled text block
-                              │
-                              ▼
-                    fulfillmentText → Dialogflow ES
-                              │
-                              ▼
-                    Rendered in Dialogflow Chat UI
-```
-
----
 
 ## 🛠️ Tech Stack
 
 | Layer | Technology | Purpose |
 |---|---|---|
-| NLP / Chatbot | Google Dialogflow ES | Intent classification & entity extraction |
+| Chatbot | Google Dialogflow ES | Intent classification & entity extraction |
 | Backend Framework | Python FastAPI | Webhook server & REST API |
 | ASGI Server | Uvicorn | Production-grade async server |
 | HTTP Client | HTTPX (async) | Non-blocking API calls to OWM |
